@@ -25,21 +25,23 @@
     </div>
     
     <div class="card-body">
-        <form>
+        <form method="POST" action="{{ route('gerarCertificado')}}">
+        @csrf
           <div class="form-group">
             <label for="nome">Nome do aluno:</label>
-            <input type="text" class="form-control" id="nome">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <input type="text" class="form-control" name="nome" id="nome">
           </div>
           
           <div class="form-group">
             <label for="cpf">CPF:</label>
-            <input type="text" class="form-control" id="cpf">
+            <input type="text" class="form-control" name="cpf" id="cpf">
+            <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos seu CPF com ninguém.</small>
           </div>
 
           <div class="form-group">
           <label for="email">Email:</label>
-            <input type="text" class="form-control" id="email">
+            <input type="text" class="form-control" name="email" id="email">
+            <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos seu email com ninguém.</small>
           </div>
 
           <button type="submit" class="btn btn-primary">Submit</button>

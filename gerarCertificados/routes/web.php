@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'HistoricoController@index')->name('index');
+Route::post('/', 'HistoricoController@gerarCertificado')->name('gerarCertificado');
