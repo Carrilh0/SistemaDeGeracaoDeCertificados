@@ -29,8 +29,15 @@ class CertificadoController extends Controller
 
         $certificado = $this->certificadoRepositorie->cadastrarCertificado($dados);
 
-        return $this->gerarCertificado($certificado);
+        $nomePdf = $this->gerarCertificado($certificado);
+
+        return $this->apagarCertificado($nomePdf);
         
+    }
+
+    public function apagarCertificado($nomePdf)
+    {
+        $this->certificadoRepositorie->apagarCertificado($nomePdf);
     }
 
     public function gerarCertificado($certificado)

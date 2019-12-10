@@ -23,10 +23,19 @@ Class CertificadoRepositorie
 
     public function gerarCertificado($certificado)
     {
-        $pdf = $this->pdf->loadView('pdf.index', compact($certificado));
-        //dd($pdf);
-       
-        return $pdf->stream();
+        $pdf = $this->pdf->loadView('pdf.index', compact('certificado'));
+        $pdf->setPaper('A4', 'landscape');
+        $output = $pdf->output();
+        
+        $nomePdf = "certificados/Certificado".time().".pdf";
+        file_put_contents($nomePdf, $output);
+        
+        return $nomePdf;
+    }
+
+    public function apagarCertificado($nomePdf)
+    {
+        unlink(public_path($nomePdf));
     }
 
     public function downloadPdf($certificado)

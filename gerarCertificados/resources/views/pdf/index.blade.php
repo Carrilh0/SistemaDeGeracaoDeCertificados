@@ -11,11 +11,11 @@
     
 </head>
 <body>
- 
- 
-<nav class="navbar navbar-dark bg-primary">
-  <span class="navbar-brand mb-0 h1">Gerador de certificado</span>
-</nav>
+
+Nome: {{$certificado->nome}} <br>
+Email: {{$certificado->email}} <br>
+CPF: {{$certificado->cpf}} <br>
+Data de conclusão: {{$certificado->conclusao}} <br>
 
 
 
