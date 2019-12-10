@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHistoricosTable extends Migration
+class CreateCertificadosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateHistoricosTable extends Migration
      */
     public function up()
     {
-        Schema::create('historicos', function (Blueprint $table) {
+        Schema::create('certificados', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
             $table->string('email');
             $table->string('cpf');
-            $table->date('nascimento');
+            $table->date('conclusao');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateHistoricosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('historicos');
+        Schema::dropIfExists('certificado');
     }
 }

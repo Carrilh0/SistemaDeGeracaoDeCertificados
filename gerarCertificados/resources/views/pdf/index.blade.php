@@ -44,11 +44,6 @@
             <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos seu email com ninguém.</small>
           </div>
 
-          <div class="form-group">
-          <label for="conclusao">Conclusao:</label>
-            <input type="date" class="form-control" name="conclusao" id="conclusao">
-          </div>
-
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

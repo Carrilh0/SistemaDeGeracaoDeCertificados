@@ -11,5 +11,6 @@
 |
 */
 
-Route::get('/', 'HistoricoController@index')->name('index');
-Route::post('/', 'HistoricoController@gerarCertificado')->name('gerarCertificado');
+Route::get('/', 'CertificadoController@index')->name('index');
+Route::get('/gerar', 'CertificadoController@gerarCertificado')->name('gerarCertificado');
+Route::post('/cadastrar', 'CertificadoController@cadastrarCertificado')->name('cadastrarCertificado');
