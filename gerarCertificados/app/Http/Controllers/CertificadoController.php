@@ -18,10 +18,9 @@ class CertificadoController extends Controller
         $this->certificadoRepositorie = $certificadoRepositorie;
     }
 
-    
     public function index()
     {
-        return view('index/index');
+        return view('index.index');
     }
 
     public function cadastrarCertificado()
@@ -30,12 +29,13 @@ class CertificadoController extends Controller
 
         $certificado = $this->certificadoRepositorie->cadastrarCertificado($dados);
 
-        $this->gerarCertificado();
+        return $this->gerarCertificado($certificado);
+        
     }
 
-    public function gerarCertificado()
-    {
-        
-        $this->certificadoRepositorie->gerarCertificado($dados);
+    public function gerarCertificado($certificado)
+    {  
+        return $this->certificadoRepositorie->gerarCertificado($certificado);
+    
     }
 }

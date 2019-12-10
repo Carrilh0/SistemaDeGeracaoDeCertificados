@@ -21,12 +21,17 @@ Class CertificadoRepositorie
         return $this->certificado->create($dados);
     }
 
-    public function downloadPdf($dados)
+    public function gerarCertificado($certificado)
     {
-        dd($dados['nome']);
-        $pdf = $this->pdf->loadView('pdf', compact());
+        $pdf = $this->pdf->loadView('pdf.index', compact($certificado));
+        //dd($pdf);
        
         return $pdf->stream();
+    }
+
+    public function downloadPdf($certificado)
+    {
+        
     }
 
 }
