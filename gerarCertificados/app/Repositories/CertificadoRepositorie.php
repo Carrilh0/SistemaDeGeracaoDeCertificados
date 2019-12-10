@@ -4,6 +4,8 @@ namespace App\Repositories;
 
 use Barryvdh\DomPDF\PDF;
 use App\Models\Certificado;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMailCertificado;
 
 Class CertificadoRepositorie
 {
@@ -31,6 +33,11 @@ Class CertificadoRepositorie
         file_put_contents($nomePdf, $output);
         
         return $nomePdf;
+    }
+
+    public function enviarCertificado($nomePdf)
+    {
+        Mail::to("vitor.carrilho@hotmail.com")->send(new SendMailCertificado($nomePdf));
     }
 
     public function apagarCertificado($nomePdf)

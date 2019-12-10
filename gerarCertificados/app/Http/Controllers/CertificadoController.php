@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\CertificadoRepositorie;
+
 use PDF;
 
 class CertificadoController extends Controller
@@ -11,6 +12,7 @@ class CertificadoController extends Controller
 
     private $request;
     private $certificadoRepositorie;
+    private $email;
 
     public function __construct(Request $request, CertificadoRepositorie $certificadoRepositorie)
     {
@@ -31,8 +33,15 @@ class CertificadoController extends Controller
 
         $nomePdf = $this->gerarCertificado($certificado);
 
+        $this->certificadoRepositorie->enviarCertificado($nomePdf);
+
         return $this->apagarCertificado($nomePdf);
         
+    }
+
+    public function enviarCertificado()
+    {
+        $this->certificadoRepositorie->enviarCertificado();
     }
 
     public function apagarCertificado($nomePdf)
