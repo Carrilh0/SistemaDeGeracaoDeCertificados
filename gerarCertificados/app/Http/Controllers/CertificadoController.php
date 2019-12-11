@@ -21,24 +21,20 @@ class CertificadoController extends Controller
 
     public function index()
     {
-        //return view('pdf.index');
         return view('index.index');
     }
 
     public function cadastrarEnviarCertificado()
     {
         $dados = $this->request->all();
-        $certificado = false;
-
-        //$certificado = $this->certificadoRepositorie->cadastrarCertificado($dados);
+        $certificado = $this->certificadoRepositorie->cadastrarCertificado($dados);
 
         $nomePdf = $this->certificadoRepositorie->gerarCertificadoTemporario($certificado);
 
-        //$this->certificadoRepositorie->enviarCertificadoTemporario($nomePdf, $certificado->email);
+        $this->certificadoRepositorie->enviarCertificadoTemporario($nomePdf, $certificado->email);
 
-        //$this->certificadoRepositorie->apagarCertificadoTemporario($nomePdf);
+        $this->certificadoRepositorie->apagarCertificadoTemporario($nomePdf);
 
         return view('index.index');
-        
     }
 }
