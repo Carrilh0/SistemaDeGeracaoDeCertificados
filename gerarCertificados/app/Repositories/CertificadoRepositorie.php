@@ -23,7 +23,7 @@ Class CertificadoRepositorie
         return $this->certificado->create($dados);
     }
 
-    public function gerarCertificado($certificado)
+    public function gerarCertificadoTemporario($certificado)
     {
         $pdf = $this->pdf->loadView('pdf.index', compact('certificado'));
         $pdf->setPaper('A4', 'landscape');
@@ -35,19 +35,14 @@ Class CertificadoRepositorie
         return $nomePdf;
     }
 
-    public function enviarCertificado($nomePdf)
+    public function enviarCertificadoTemporario($nomePdf,$email)
     {
-        Mail::to("vitor.carrilho@hotmail.com")->send(new SendMailCertificado($nomePdf));
+        Mail::to($email)->send(new SendMailCertificado($nomePdf));
     }
 
-    public function apagarCertificado($nomePdf)
+    public function apagarCertificadoTemporario($nomePdf)
     {
         unlink(public_path($nomePdf));
-    }
-
-    public function downloadPdf($certificado)
-    {
-        
     }
 
 }

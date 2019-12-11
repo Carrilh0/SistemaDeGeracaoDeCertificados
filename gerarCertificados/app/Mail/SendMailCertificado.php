@@ -31,7 +31,7 @@ class SendMailCertificado extends Mailable
      */
     public function build()
     {
-        return $this->view('email.index')->from('estudoservidorescloud@gmail.com')->subject('Teste')
+        return $this->view('email.index')->from('estudoservidorescloud@gmail.com')->subject('Certificado de conclusão de curso')
                 ->attach(\public_path($this->nomePdf));
     }
 }
