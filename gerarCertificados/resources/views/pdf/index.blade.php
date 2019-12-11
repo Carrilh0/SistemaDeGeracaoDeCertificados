@@ -48,16 +48,16 @@
 		<h1>Certificado</h1>
 		<div class="col-md-12 texto">
 			<p>
-				Certificamos que, __________________ CPF nº ____________________ concluiu o curso de 
-				_________________, na _______________ CNPJ nº _____________________ com carga horária de 
-				_______, realizado na data __/__/____
+				Certificamos que, {{$certificado->nome}}, CPF nº {{$certificado->cpf}}, concluiu o curso de 
+				Desenvolvimento de Sistemas no SENAI, CNPJ nº 03.795.071/0001-16 com carga horária de 
+				1000 horas, realizado na data {{date('d/m/Y', strtotime($certificado->conclusao))}}
 		</div>
 
 		<div class="col-md-12 conclusao">
-			<p><b>Salvador</b>, __/__/____</p> <br>
-			___________________________ <br>
-			___________________________ <br>
-			________
+			<p><b>Salvador - BA </b>, {{date('d/m/Y', strtotime($certificado->created_at))}}</p> <br>
+			__________________________________________________________ <br>
+		
+			
 		</div>
 		
 	</div>
