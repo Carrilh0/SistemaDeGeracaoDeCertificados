@@ -11,11 +11,14 @@ Class CertificadoRepositorie
 {
 
     private $pdf;
+    private $certificado;
+    private $mail;
 
-    public function __construct(PDF $pdf, Certificado $certificado)
+    public function __construct(PDF $pdf, Certificado $certificado, Mail $mail)
     {
         $this->pdf = $pdf;
         $this->certificado = $certificado;
+        $this->mail = $mail;
     }
 
     public function cadastrarCertificado($dados)
