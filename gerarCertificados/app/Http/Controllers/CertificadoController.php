@@ -9,7 +9,6 @@ use PDF;
 
 class CertificadoController extends Controller
 {
-
     private $request;
     private $certificadoRepositorie;
     private $email;
@@ -40,6 +39,4 @@ class CertificadoController extends Controller
         return view('index.index');
         
     }
-
-    
 }
