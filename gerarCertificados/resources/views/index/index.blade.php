@@ -52,14 +52,14 @@
           <div class="col-md-4">
             <div class="form-group">
               <label for="nome">Nome do aluno:</label>
-              <input required type="text" class="form-control" name="nome" id="nome" placeholder="Digite aqui...">
+              <input required type="text" class="form-control" value="{{ old('nome')}}" name="nome" id="nome" placeholder="Digite aqui...">
             </div>
           </div>
           
           <div class="col-md-4">
             <div class="form-group">
               <label for="cpf">CPF do aluno:</label>
-              <input required type="text" class="form-control" name="cpf" id="cpf" placeholder="Digite aqui...">
+              <input required type="text" class="form-control" value="{{ old('cpf') }}" name="cpf" id="cpf" placeholder="Digite aqui...">
               <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos seu CPF com ninguém.</small>
             </div>
           </div>
@@ -67,7 +67,7 @@
           <div class="col-md-4">
             <div class="form-group">
             <label for="email">Email do aluno:</label>
-              <input required type="text" class="form-control" name="email" id="email" placeholder="Digite aqui...">
+              <input required type="text" class="form-control" value="{{ old('email')}}" name="email" id="email" placeholder="Digite aqui...">
               <small id="emailHelp" class="form-text text-muted">Nunca compartilharemos seu email com ninguém.</small>
             </div>
           </div>
@@ -75,7 +75,7 @@
           <div class="col-md-4">
             <div class="form-group">
             <label for="conclusao">Data de Conclusao:</label>
-              <input required type="date" class="form-control" name="conclusao" id="conclusao" placeholder="Digite aqui...">
+              <input required type="date" class="form-control" value="{{ old('conclusao')}}" name="conclusao" id="conclusao" placeholder="Digite aqui...">
             </div>
           </div>
           
@@ -145,7 +145,6 @@ function validaCPF(cpf)
   }
   
    $( document ).ready(function(){
-        alert()
         $('#salvar').click(function(){
             if($('#nome').val() == ''){
               alert("O campo nome é obrigatiorio");
