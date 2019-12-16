@@ -36,13 +36,30 @@ class CertificadoController extends Controller
             return redirect()->back()->withErrors($validate)->withInput();
         }
 
-        $certificado = $this->certificadoRepositorie->cadastrarCertificado($dados);
+        //Tratando de erro caso alguma parte do código falhe
+        try {
+            $certificado = $this->certificadoRepositorie->cadastrarCertificado($dados);
+        } catch (Exception $e){
+            dd($e->getMessage());
+        }
 
-        $nomePdf = $this->certificadoRepositorie->gerarCertificadoTemporario($certificado);
-
-        $this->certificadoRepositorie->enviarCertificadoTemporario($nomePdf, $certificado->email);
-
-        $this->certificadoRepositorie->apagarCertificadoTemporario($nomePdf);
+        try {
+            $nomePdf = $this->certificadoRepositorie->gerarCertificadoTemporario($certificado);
+        } catch (Exception $e){
+            dd($e->getMessage());
+        }    
+        
+        try {
+            $this->certificadoRepositorie->enviarCertificadoTemporario($nomePdf, $certificado->email);
+        } catch (Exception $e){
+            dd($e->getMessage());
+        }
+        
+        try {
+            $this->certificadoRepositorie->apagarCertificadoTemporario($nomePdf);
+        } catch (Exception $e){
+            dd($e->getMessage());
+        }
 
         return view('index.index');
     }
