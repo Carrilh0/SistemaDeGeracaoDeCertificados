@@ -4,15 +4,15 @@ Desafio proposto por mim mesmo, com o intuito de desenvolver um sistema capaz de
 
 ## 1. Tela principal
 
-![Login](ImagensDoc/screenshot_1.png)  
+![Login](ImagensDoc/Screenshot_1.png)  
 
 ## 2. Email recebido
 
-![Atividades](ImagensDoc/screenshot_2.png)  
+![Atividades](ImagensDoc/Screenshot_2.png)  
 
 ## 3. PDF gerado
 
-![Atividades](ImagensDoc/screenshot_3.png) 
+![Atividades](ImagensDoc/Screenshot_3.png) 
 
 # Etapas necessarias para a execução do projeto
 
