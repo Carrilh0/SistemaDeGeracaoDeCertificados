@@ -30,7 +30,7 @@ class CertificadoController extends Controller
     {
         $certificados = $this->certificadoRepositorie->verCertificados();
 
-        return view('certificados.index');
+        return view('certificados.index',compact('certificados'));
     }
 
     public function cadastrarEnviarCertificado()
