@@ -14,7 +14,9 @@ class CreateInstituicaosTable extends Migration
     public function up()
     {
         Schema::create('instituicaos', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('nome');
+            $table->string('cnpj');
             $table->timestamps();
         });
     }
