@@ -19,7 +19,7 @@
       <td>{{$certificado->id}}</td>
       <td>{{$certificado->nome}}</td>
       <td>{{$certificado->email}}</td>
-      <td>{{$certificado->conclusao}}</td>
+      <td>{{date('d/m/Y', strtotime($certificado->conclusao))}}</td>
       <td><a class="btn-success btn" href="{{ route('visualizarCertificado', $certificado->id)}}" style="margin-left: 30%"> <i class="fas fa-eye"> </i> </a> </td>
     </tr>
 
