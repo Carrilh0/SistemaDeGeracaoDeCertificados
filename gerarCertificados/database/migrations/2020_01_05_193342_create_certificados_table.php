@@ -16,7 +16,15 @@ class CreateCertificadosTable extends Migration
         Schema::create('certificados', function (Blueprint $table) {
             $table->increments('id');
             $table->date('conclusao');
+            
+            $table->integer('aluno_id')->unsigned();
+            $table->foreign('aluno_id')->references('id')->on('alunos');
+            
+            $table->integer('curso_id')->unsigned();
+            $table->foreign('curso_id')->references('id')->on('cursos');
+           
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
     }
 

@@ -18,7 +18,9 @@ class CreateAlunosTable extends Migration
             $table->string('nome');
             $table->string('email');
             $table->string('cpf');
+            
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
     }
 

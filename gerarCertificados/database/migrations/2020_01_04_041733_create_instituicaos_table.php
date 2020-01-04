@@ -17,7 +17,9 @@ class CreateInstituicaosTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('cnpj');
+            
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
     }
 

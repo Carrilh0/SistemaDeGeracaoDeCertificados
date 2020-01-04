@@ -17,7 +17,12 @@ class CreateCursosTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('duracao');
+            
+            $table->integer('instituicao_id')->unsigned();
+            $table->foreign('instituicao_id')->references('id')->on('instituicaos');
+
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
     }
 
