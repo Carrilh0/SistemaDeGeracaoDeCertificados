@@ -3,7 +3,7 @@
 @section('content')
     
     <div class="card-header">
-      Formulário de geração de certificado
+      Formulário de geração de certificado para o curso de Desenvolvimento de sistemas no SENAI
     </div>
     
     <div class="card-body">
