@@ -6,7 +6,6 @@ use Barryvdh\DomPDF\PDF;
 use App\Models\Certificado;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMailCertificado;
-
 Class CertificadoRepositorie
 {
 
@@ -29,6 +28,14 @@ Class CertificadoRepositorie
     public function cadastrarCertificado($dados)
     {
         return $this->certificado->create($dados);
+    }
+
+    public function visualizarCertificado($id)
+    {
+        $certificado = $this->certificado->find($id);
+        $pdf = $this->pdf->loadView('pdf.index', compact('certificado'));
+        $pdf->setPaper('A4', 'landscape');
+        return $output = $pdf->stream();
     }
 
     public function gerarCertificadoTemporario($certificado)

@@ -33,6 +33,11 @@ class CertificadoController extends Controller
         return view('certificados.index',compact('certificados'));
     }
 
+    public function visualizarCertificado($id)
+    {
+        return $this->certificadoRepositorie->visualizarCertificado($id);
+    }
+
     public function cadastrarEnviarCertificado()
     {
         $dados = $this->request->all();
