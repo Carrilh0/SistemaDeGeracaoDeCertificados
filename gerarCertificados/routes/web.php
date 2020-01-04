@@ -12,4 +12,5 @@
 */
 
 Route::get('/', 'CertificadoController@index')->name('index');
+Route::get('/certificadosgerados', 'CertificadoController@certificadosGerados')->name('certificados');
 Route::post('/cadastrar', 'CertificadoController@cadastrarEnviarCertificado')->name('cadastrarCertificado');

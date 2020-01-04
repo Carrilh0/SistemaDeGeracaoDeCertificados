@@ -26,6 +26,13 @@ class CertificadoController extends Controller
         return view('index.index');
     }
 
+    public function certificadosGerados()
+    {
+        $certificados = $this->certificadoRepositorie->verCertificados();
+
+        return view('certificados.index');
+    }
+
     public function cadastrarEnviarCertificado()
     {
         $dados = $this->request->all();

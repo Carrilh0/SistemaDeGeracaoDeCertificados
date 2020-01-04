@@ -1,30 +1,6 @@
-<!DOCTYPE html>
-<html style="height:100%!important">
+@extends('header.index')
 
-<head>
-
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Gerador de Certificados</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' href={{ asset('css/bootstrap.css') }}>
-
-    <style>
-      body {
-        background:#e0e0e0;
-      }
-    </style>
-    
-</head>
-<body>
- 
- 
-<nav class="navbar navbar-dark bg-primary">
-  <span class="navbar-brand mb-0 h1">Gerador de certificado</span>
-</nav>
-
-<div class="container" style="margin-top: 2%">
-  <div class="card">
+@section('content')
     
     <div class="card-header">
       Formulário de geração de certificado
@@ -170,5 +146,4 @@ function validaCPF(cpf)
     });
 </script>
 
-</body>
-</html>
+@endsection

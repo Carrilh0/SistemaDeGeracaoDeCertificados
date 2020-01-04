@@ -21,6 +21,11 @@ Class CertificadoRepositorie
         $this->mail = $mail;
     }
 
+    public function verCertificados()
+    {
+        return $this->certificado->paginate(15);
+    }
+
     public function cadastrarCertificado($dados)
     {
         return $this->certificado->create($dados);
